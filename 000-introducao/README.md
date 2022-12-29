@@ -14,7 +14,7 @@ Vagrant é uma ferramenta de automação no provisionamento de máquinas virtuai
 
 ### Conceitos
 
-- Tem suporte para VirtualBox, Hyper-V, Libvirt, VMWare. (Requisitos)
+- Tem suporte para VirtualBox, Hyper-V, VMWare. (Requisitos)
 
 - Controla o Hypervisor a partir de um arquivo, o Vagrantfile, que contém toda a configuração da máquina virtual.
 
