@@ -1,0 +1,13 @@
+- name: Set root password localhost
+  mysql_user:
+    name: "{{ mysql_root_user }}"
+    host: localhost
+    password: "{{ mysql_root_pass }}"
+    state: present
+    check_implicit_admin: yes
+    login_user: "{{ mysql_root_user }}"
+    login_host: localhost
+    login_password: "{{ mysql_root_pass }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+  notify:
+    - restart mysql

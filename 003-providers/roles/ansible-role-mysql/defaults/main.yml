@@ -1,0 +1,8 @@
+---
+mysql_root_user: root
+mysql_root_pass: root
+mysql_packages:
+  - mysql-server
+  - python
+  - python-mysqldb  
+  - python3-pymysql
