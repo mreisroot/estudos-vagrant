@@ -13,7 +13,7 @@ Não é muito recomendado provisionar com o shell da maneira que vimos anteriorm
 
 Provisionando através de um shell script externo deixa o Vagrantfile mais limpo, pois assim não é necessário especificar cada instrução do provisionamento dentro do Vagrantfile, tudo ficará dentro do arquivo do script, o que também resulta na possibilidade de executar mais comandos no provisionamento sem sacrificar a clareza do código do Vagrantfile.
 
-Ao executar `vagrant up`, o vagrant irá procurar pelo script na pasta em que se encontra o Vagrantfile do projeto que você está criando.
+Ao executar `vagrant up`, o Vagrant irá procurar pelo script na pasta em que se encontra o Vagrantfile do projeto que você está criando.
 
 # Provisionador de Arquivo
 
