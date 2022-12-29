@@ -1,0 +1,12 @@
+---
+- name: Install mysql packages
+  apt:
+    name: "{{ mysql_packages }}"
+    state: present
+
+- name: Start mysql service
+  service:
+    name: mysql
+    state: started
+    enabled: true
+...

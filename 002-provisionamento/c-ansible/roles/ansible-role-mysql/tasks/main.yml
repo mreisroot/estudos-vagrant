@@ -1,0 +1,7 @@
+---
+- name: Include task install_mysql_rhel.yml
+  include: install.yml
+
+- name: Include task config_mysql.yml
+  include: configure.yml
+...

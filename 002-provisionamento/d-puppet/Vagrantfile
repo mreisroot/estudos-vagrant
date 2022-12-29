@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+
+  # Informando ao Vagrant que vamos utilizar uma imagem do Ubuntu
+  config.vm.box = "hashicorp/bionic64"
+
+  # Configurando a VM de aplicação
+  config.vm.define:app do |app_config|
+
+    # Definindo a rede como privada e o ip associado à VM
+    app_config.vm.network "private_network", ip: "192.168.56.11"
+
+    # Instalando o Puppet na VM (algumas imagens já vem com o Puppet instalado)
+    app_config.vm.provision "shell", inline: "sudo apt-get update && sudo apt-get install -y puppet"
+
+    # Informando ao Vagrant para prosseguir com o provisionamento utilizando o Puppet
+    app_config.vm.provision "puppet" do |puppet|
+      puppet.manifest_file = "app.pp"
+    end
+
+    # Utilizando o Virtualbox como provider
+    app_config.vm.provider:virtualbox do |v|
+      v.memory = 1024
+      v.cpus = 1
+    end
+
+  end
+
+end
