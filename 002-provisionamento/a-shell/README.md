@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Você pode executar qualquer comando, como um `apt update`, `apt install nginx`.
+Você pode executar qualquer comando, como um `apt update`, `apt install -y nginx`.
 
 Caso você tenha feito uma alteração no provisionamento e já tem a máquina criada, execute o comando:
 
