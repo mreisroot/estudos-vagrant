@@ -6,9 +6,9 @@ Gera o Vagrantfile da box hashicorp/bionic64, uma máquina virtual do Ubuntu, na
 
 `vagrant up`
 
-Leitura do Vagrantfile pelo vagrant, que vai resultar na criação da máquina virtual, de acordo com a configuração definida.
+Leitura do Vagrantfile pelo Vagrant, que vai resultar na criação da máquina virtual, de acordo com a configuração definida.
 
-O Vagrant irá baixar a imagem do Sistema Operacional caso não seja encontrada na máquina local, e irá configurar de acordo com o que foi definido no Vagrantfile. Caso a imagem já tenha sido baixada, o vagrant irá direto à configuração da máquina, agilizando o processo.
+O Vagrant irá baixar a imagem do Sistema Operacional caso não seja encontrada na máquina local, e irá configurar de acordo com o que foi definido no Vagrantfile. Caso a imagem já tenha sido baixada, o Vagrant irá direto à configuração da máquina, agilizando o processo.
 
 Ou seja, caso tenha sido a primeira vez que você criou uma máquina virtual de um sistema, o processo de criação da máquina virtual vai demorar um pouco mais por conta do download da imagem. Já nas próximas vezes em que criar uma máquina com a imagem já baixada, o processo será mais rápido.
 
@@ -72,7 +72,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Como nesse arquivo houve simplesmente a definição da rede da máquina como sendo pública, o vagrant irá exibir uma mensagem perguntando qual interface de rede será usada como ponte.
+Como nesse arquivo houve simplesmente a definição da rede da máquina como sendo pública, o Vagrant irá exibir uma mensagem perguntando qual interface de rede será usada como ponte.
 
 Dica: Quando for escolher uma interface como ponte, escolha uma que está sendo usada para conectar o host à internet. Por exemplo, se você está usando Wi-Fi para se conectar à internet, escolha a interface de rede wireless. No caso da minha máquina, escolherei a interface wlan0.
 
@@ -99,13 +99,13 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Reinicie a máquina vagrant com `vagrant reload`, e teste a configuração digitando o IP definido num navegador. Caso apareça a página do nginx (se o tiver instalado na máquina virtual, claro), quer dizer que funcionou.
+Reinicie a máquina Vagrant com `vagrant reload`, e teste a configuração digitando o IP definido num navegador. Caso apareça a página do nginx (se o tiver instalado na máquina virtual, claro), quer dizer que funcionou.
 
 ## Definindo ponte no Vagrantfile
 
 É possível definir uma placa de rede para a ponte no Vagrantfile, fazendo com que o Vagrant não pergunte mais qual placa de rede deseja escolher como ponte.
 
-Essa configuração é boa caso queira subir rapidamente ambientes de teste em sua máquina local, mas não é muito interessante em termos de portabilidade, pois, caso compartilhe o Vagrantfile com outras pessoas, podem haver erros na execução do vagrant por conta de nomes de placa de rede diferentes.
+Essa configuração é boa caso queira subir rapidamente ambientes de teste em sua máquina local, mas não é muito interessante em termos de portabilidade, pois, caso compartilhe o Vagrantfile com outras pessoas, podem haver erros na execução do Vagrant por conta de nomes de placa de rede diferentes.
 
 Exemplo:
 
